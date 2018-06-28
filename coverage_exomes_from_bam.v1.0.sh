@@ -7,7 +7,7 @@ usage() {
     NAME=$(basename $0)
     cat <<EOF
 Usage:
-    RUN AS: if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o log/slurm.%j.out --mem-per-cpu=<X>G [--nodes=1-27 --ntasks=<Y>] ${NAME} [full/exon] [0/1/2] [BAM_FILES] [BEDFILE] [OUT_PREFIX]
+    RUN AS: if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o log/slurm.%j.out --mem-per-cpu=<X>G [--nodes=1-27 --ntasks=<Y>] ${0} [full/exon] [0/1/2] [BAM_FILES] [BEDFILE] [OUT_PREFIX]
     --nodes=1-27 --ntasks=<Y> -> only for process#0
     <X> -> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
     <Y> -> number of tasks = 2 x number of chromosomes
