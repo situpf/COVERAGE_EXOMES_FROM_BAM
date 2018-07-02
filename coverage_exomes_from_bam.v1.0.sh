@@ -1,7 +1,7 @@
 #!/bin/bash
 
 module load parallel/20151222
-export PATH=$PATH:/homes/users/woliveros/scratch/test_exome-cov/ANALYSIS/COVERAGE_EXOMES_FROM_BAM/
+export PATH=$PATH:/homes/users/woliveros/scratch/test_exome-cov/COVERAGE_EXOMES_FROM_BAM/
 
 usage() {
     NAME=$(basename $0)
