@@ -14,8 +14,9 @@ infile <- args[1]
 out <- args[2]
 
 ### test!!!!
-# setwd("/home/mtormo/ssh_scratch_lab_sit_mtormo/201703_cow-mitochondrial")
-# infile="test_bam2analyse.txt"
+# setwd("/home/mtormo/ssh_scratch_lab_sit/shared_data/coverage_exomes")
+# infile="cov_files2analyse.txt"
+# out<-"test"
 ###
 
 
@@ -61,11 +62,12 @@ for (i in bam.df$V1){
 id_per_page = 33
 n_pages <- ceiling(nrow(bam.out)/id_per_page)
     
-pdf(sprintf("%s_full_cov-stats.pdf",out),height = 12)
+pdf(sprintf("/home/mtormo/%s_full_cov-stats.pdf",out),height = 12)
 start_page <- 1
 end_page <- id_per_page
-if (end_page > nrow(bam.out)){end_page <- nrow(bam.out)}
+# if (end_page > nrow(bam.out)){end_page <- nrow(bam.out)}
 for (p in 1:n_pages){
+    if (end_page > nrow(bam.out)){end_page <- nrow(bam.out)}
     # print(c(start_page,end_page))
     grid.newpage()
     grid.table(bam.out[start_page:end_page,2:ncol(bam.out)],rows=NULL)
