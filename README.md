@@ -4,7 +4,7 @@
 
 ## Description
 
-In this directory you'll find all necessary scripts for analyzing DNA data and extracting some important information as coverage plots and a summary of counts. The starting point for doing so are the BAM files. 
+In this directory you'll find all necessary scripts for analyzing DNA data and extracting some important information as coverage  and a summary of counts. The starting point for doing so are the BAM files. 
 
 Scripts in this directory: 
 
@@ -14,6 +14,12 @@ Scripts in this directory:
 * stats_coverage-per-exon.v1.0.py
 * README.md                         
 * stats_from_genomecov.v1.0.R
+
+In order to obtain the coverage and summary of counts you would have to run three jobs. The proces of extracting the coverage of DNA is divided in :
+
+ * **Proces 0**: this process will split our bed files into chromomes
+ * **Proces 1**: [ completar ]
+ * **Proces 2**: we have two possible options extact the coverage of the full genome or extract the coverage per exome
 
 ## DATA 
 
