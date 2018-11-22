@@ -48,21 +48,21 @@ The main script file is **coverage_exomes_from_bam.v1.0.sh** there you can find 
 
 > if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o log/slurm.%j.out --mem-per-cpu=<X>G [--nodes=1-27--ntasks=<Y>] $0 [full/exon] [0/1/2] [BAM_FILES] [BEDFILE] [OUT_PREFIX]
     
->        --nodes=1-27 --ntasks=<Y> -> only for process#0
+   --nodes=1-27 --ntasks=<Y> -> only for process#0
     
->    <X> -> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
+   <X> -> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
     
->    <Y> -> number of tasks = 2 x number of chromosomes
-    
->    [full/exon] -> full: get stats in the entire bam inside exome OR exon: get stats by each exon
+   <Y> -> number of tasks = 2 x number of chromosomes
+   
+   [full/exon] -> full: get stats in the entire bam inside exome OR exon: get stats by each exon
 
->    [0/1/2] -> process#0 (pre-processing beds and bams by chromosome), process #1 (per-base coverage and intersect with bedfile, per chromosome) or process #2 (join chromosomes and get stats)
+   [0/1/2] -> process#0 (pre-processing beds and bams by chromosome), process #1 (per-base coverage and intersect with bedfile, per chromosome) or process #2 (join chromosomes and get stats)
 
->    [BAM_FILES] -> file with a list of bam files, one each line
+   [BAM_FILES] -> file with a list of bam files, one each line
 
->    [BEDFILE] -> Bed file
+  [BEDFILE] -> Bed file
 
->    [OUT_PREFIX] -> Output prefix
+   [OUT_PREFIX] -> Output prefix
     
 
 # PROCESS 0: 
