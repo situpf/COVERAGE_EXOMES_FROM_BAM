@@ -17,9 +17,9 @@ Scripts in this directory:
 
 In order to obtain the coverage and summary of counts you would have to run three processes sequentialy (run the fist and wait until it end and then run the second and so on). The proces of extracting the coverage of DNA is divided in :
 
- * **Process 0**: this process will split our bed files into chromomes
- * **Process 1**: [ completar ]
- * **Process 2**: we have two possible options extact the coverage of the full genome or extract the coverage per exome
+ * **Process 0**: pre-processing beds and bams by chromosome, this process will split our bed files into chromomes
+ * **Process 1**: per-base coverage and intersect with bedfile, per chromosome , [ completar ]
+ * **Process 2**: join chromosomes and get stats. We have two possible options extact the coverage of the full genome or extract the coverage per exome
 
 ## DATA 
 
@@ -47,20 +47,22 @@ After doing the **git clone** you'll have to modify this line telling the correc
 The main script file is **coverage_exomes_from_bam.v1.0.sh** there you can find the general command that we have to use to run the different processes:
 
 > if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o log/slurm.%j.out --mem-per-cpu=<X>G >[--nodes=1-27--ntasks=<Y>] $0 [full/exon] [0/1/2] [BAM_FILES] [BEDFILE] [OUT_PREFIX]
+    
 >        --nodes=1-27 --ntasks=<Y> -> only for process#0
+    
 >    <X> -> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
+    
 >    <Y> -> number of tasks = 2 x number of chromosomes
+    
 >    [full/exon] -> full: get stats in the entire bam inside exome OR exon: get stats by each exon
+
 >    [0/1/2] -> process#0 (pre-processing beds and bams by chromosome), process #1 (per-base coverage and intersect with bedfile, >per chromosome) or process #2 (join chromosomes and get stats)
+
 >    [BAM_FILES] -> file with a list of bam files, one each line
+
 >    [BEDFILE] -> Bed file
+
 >    [OUT_PREFIX] -> Output prefix
     
 
 # PROCESS 0: 
-In order
-Usage:
-    RUN AS: if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o 
-log/slurm.%j.out --mem-per-cpu=<X>G [--nodes=1-27 --ntasks=<Y>] $0 [full/exon] [
-0/1/2] [BAM_FILES] [BEDFILE] [OUT_PREFIX]
-
