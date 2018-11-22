@@ -28,19 +28,14 @@ Necessary files to perform your DNA coverage:
 
 ### Export path to the directory with all the scripts
 
-Before starting with the analysis of DNA data we have to export the path to the directory were you have all the scripts. On the script **coverage_exomes_from_bam.v1.0.sh ** one of the firts lines is: 
+Before starting with the analysis of DNA data we have to export the path to the directory were you have all the scripts. On the script **coverage_exomes_from_bam.v1.0.sh** one of the firts lines is: 
 
-> export PATH=$PATH:"/path/to/RNASeq_star_htscount_limma"
+> export PATH=$PATH:"/path/to/COVERAGE_EXOMES_FROM_BAM"
 
-After doing the **git clone** you'll have to modify this line telling the correct path to the RNASeq_star_htscount_limma directory. 
+After doing the **git clone** you'll have to modify this line telling the correct path to the COVERAGE_EXOMES_FROM_BAM directory. 
 
+## PROCESSING
 
-module load parallel/20180822-foss-2016b
-export PATH=$PATH:/homes/users/aalomar/gitHub/COVERAGE_EXOMES_FROM_BAM/
-
-usage() {
-    NAME=$(basename $0)
-    cat <<EOF
 Usage:
     RUN AS: if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o 
 log/slurm.%j.out --mem-per-cpu=<X>G [--nodes=1-27 --ntasks=<Y>] $0 [full/exon] [
