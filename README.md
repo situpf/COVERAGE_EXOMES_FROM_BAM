@@ -15,6 +15,8 @@ Scripts in this directory:
 * README.md                         
 * stats_from_genomecov.v1.0.R
 
+## DATA 
+
 Necessary files to perform your DNA coverage:
 
 * [BAM FOLDER]-> this folder shoud have all your data files with extension ".bam" that you want to analyze 
