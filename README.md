@@ -50,11 +50,11 @@ The main script file is **coverage_exomes_from_bam.v1.0.sh** there you can find 
    
    Where : 
    
-   --nodes=1-27 --ntasks=<Y> -> only for process#0
+   --nodes=1-27 --ntasks=Y -> only for process#0
     
-   <X> -> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
+   X-> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
     
-   <Y> -> number of tasks = 2 x number of chromosomes
+   Y -> number of tasks = 2 x number of chromosomes
    
    [full/exon] -> full: get stats in the entire bam inside exome OR exon: get stats by each exon
 
