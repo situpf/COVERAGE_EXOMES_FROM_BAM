@@ -49,6 +49,7 @@ The main script file is **coverage_exomes_from_bam.v1.0.sh** there you can find 
 > if [ ! -d log/ ];then mkdir log/;fi ; sbatch -e log/slurm.%j.err -o log/slurm.%j.out --mem-per-cpu=<X>G [--nodes=1-27--ntasks=<Y>] $0 [full/exon] [0/1/2] [BAM_FILES] [BEDFILE] [OUT_PREFIX]
    
    Where : 
+   
    --nodes=1-27 --ntasks=<Y> -> only for process#0
     
    <X> -> memory to use (2 Gb for process#1, and 12Gb for process#0 and #2 recommended)
@@ -74,7 +75,7 @@ You have to execute the following comand:
     
    Where:
    
-   <Y> -> number of tasks = 2 x number of chromosomes
+   Y -> number of tasks = 2 x number of chromosomes
    
    [full/exon] -> full: get stats in the entire bam inside exome OR exon: get stats by each exon
 
