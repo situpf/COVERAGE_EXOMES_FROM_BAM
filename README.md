@@ -123,10 +123,10 @@ You have to execute the following comand:
   ## RESULT
   
   If you run the poocess 2 with the exon obtions you would obtain:
-    *[OUT_PREFIX]_cov1030.tab
-    *[OUT_PREFIX]_cov0.tab
+    * [OUT_PREFIX]_cov1030.tab
+    * [OUT_PREFIX]_cov0.tab
     
   Otherwise if you run the process 2 specifying full you would obtain:
-    *[OUT_PREFIX]_full_cov-stats.pdf
+    * [OUT_PREFIX]_full_cov-stats.pdf
     
    
